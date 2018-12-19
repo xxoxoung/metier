@@ -1,0 +1,31 @@
+.left{
+ float:left;
+  width:18%;
+ position: fixed;
+ }
+ .right{
+float:right;
+ width:81%;
+}
+.info{
+ float:right;
+ width:75%;
+margin-top:2%;
+ }
+ h3{
+ margin-top: -3%;
+ margin-left: -1%;
+ }
+.ouri{
+    font-size: 12px;
+    margin-top: 1%;
+}
+
+.t{
+margin-left: 30%;
+ margin-top:-16%
+ }
+ h2{
+  margin-left: 5%;
+margin-top:0.5%; 
+ }
