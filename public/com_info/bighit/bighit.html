@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Detail Info</title>
+      <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <!--익스플로러 호환성-->
+          <link rel="stylesheet" type="text/css" href="../detail_info.css">
+        <!--css연결-->
+        
+         <!--좋아요 표시-->
+          <script>
+         var i=0;
+        function ChangeImage(post_id){
+            i=i+post_id;
+            var heart=document.getElementById('like');
+            if(!heart) return;
+            
+            if(i%2!=0){
+          
+                heart.src="../like.png";
+            }
+            else
+                {
+                    heart.src="../unlike.png";
+                }
+              
+            }
+            
+        </script>
+        
+        
+    </head>
+    <body>
+        <div class="wrap">
+            <!--기업정보 글씨랑 사진만 수정해서 쓰면댐-->
+    <div class="left">
+        <a href="../../main.html"><img src="../../logo1.png" width="100%"></a>
+        <a href="../../user_info.html"><img src="https://image.flaticon.com/icons/svg/179/179959.svg" width="20%" style="margin-left:10%"></a><div class="t"><b>마이페이지</b></div>
+        </div>
+        
+        <div class="right">
+            <img src="bighit_3.jpg" style="float: right"height="147px" >&nbsp;
+            <h2>(주)빅히트엔터테인먼트
+                
+                   <!--즐겨찾기-->
+                <input type="image" id="like" value="" src="../unlike.png"  onclick="ChangeImage(1); return false;">
+                <!--디비에 저장-->
+                <input type="hidden" id="comNo" value="14">
+                
+                
+                <br>&nbsp;&nbsp;&nbsp;빅히트엔터테인먼트 일본지사 회계 담당 경력 채용</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            </div>
+        <div class="info">
+            
+             &nbsp;
+               <h3>● 기본정보</h3>
+                <h4>
+                &nbsp;&nbsp;
+               기업형태 : 중격기업, 주식회사
+              <br>
+                &nbsp;&nbsp;
+                 업종 : 매니저업
+                <br>
+                &nbsp;&nbsp;
+                사업내용 :연예인 매니지먼트 대행, 음반 제작, 무역
+                <br>
+                &nbsp;&nbsp;
+                홈페이지 :  www.bighit.com
+                <br>
+                &nbsp;&nbsp;
+                기업주소 : 서울 강남구 도산대로 16길 13-20, 2층
+                <br>
+                &nbsp;&nbsp;
+                설립일 : 2005년 2월 1일 (업력 13년)
+                <br>
+                 &nbsp;&nbsp;
+                대표자명 : 방시혁
+                <br>
+                &nbsp;&nbsp;
+               사원수 : 128명 (2018년 기준)
+                <br>
+                &nbsp;&nbsp;
+              매출액 : 924억 (2017년 기준)
+                <br>
+                </h4>
+            
+             &nbsp;
+               <h3>● 모집부문 및 자격요건</h3>
+            <img src="bighit_i_1.png" width="80%" height="20%">
+            <br><br>
+            
+                &nbsp;
+               <h3>근무조건 및 환경</h3>
+                <h4>
+                &nbsp;&nbsp;
+                근무형태: 정규직(시용기간6개월)<br>
+                &nbsp;&nbsp;
+                근무부서: 일본지사<br>
+                &nbsp;&nbsp;
+                근무요일/시간: 주 5일(월~금)오전10시~오후7시<br>
+                &nbsp;&nbsp;
+                근무지역: 일본<br>
+                &nbsp;&nbsp;
+                근무환경: (211-200)일본 도쿄-아카사카<br>
+                    
+                &nbsp;&nbsp;
+                급여: 270만원(퇴직금 별도)<br>
+                &nbsp;&nbsp;
+                회사주소: 서울 강남구 학동로 30길5 (논현동 208-13번지)<br>
+                </h4>
+            
+                 &nbsp;
+              <h3>● 전형절차 및 제출서류</h3>
+                <h4>
+                &nbsp;&nbsp;
+                전형절차: 서류전형-면접-채용<br>
+                &nbsp;&nbsp;
+                제출서류: 이력서<br>
+               
+                </h4>
+                
+                 &nbsp;
+               <h3>● 접수기간 및 방법</h3>
+                <h4>
+                &nbsp;&nbsp;
+                접수기간: 2018년 9월 22(목)~채용시까지<br>
+                &nbsp;&nbsp;
+                이력서양식: Metier 온라인 이력서<br>
+                &nbsp;&nbsp;
+                접수방법: Metier 입사지원, 전화 지원<br>
+                &nbsp;&nbsp;
+                기타 유의사항: 입사지원 서류에 허위사실이 발견될 경우, 채용확정 이후라도 채용이 취소될 수 있습니다<br>
+                </h4>
+                 &nbsp;
+               <h3>● 근무지 위치</h3>
+                 &nbsp; &nbsp; &nbsp;<img src="bighit_i_2.PNG" width="80%">
+            
+            
+            
+               <!--회사정보 공통부분임 수정ㄴㄴ-->
+                <hr width="100%">
+             <div class="ouri">
+                &nbsp;&nbsp;회사명:(주)미티어<br>&nbsp;&nbsp;주소:서울특별시 노원구 공릉동 34길 22 103호 <br>&nbsp;&nbsp;책임자:강하경,노을,고소영<br>&nbsp;&nbsp;전화번호:010-0000-0000<br>&nbsp;&nbsp;통신판매업:제 2018호, Copyright(c)(주)미티어,All rights reserved.
+                </div>
+           
+            
+        </div>
+        </div>
+    </body>
+</html>
