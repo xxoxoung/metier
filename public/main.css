@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+html, body {
+    height: 100%;
+}
+figure.company {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 200px;
+  max-width: 100px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  background-color:#000000;
+  margin-left: 3%;
+}
+figure.company* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.company img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+figure.company:after,
+figure.company figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+figure.company:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+
+}
+figure.company figcaption {
+  z-index: 1;
+  padding: 40px;
+}
+figure.company h3,
+figure.company .links {
+  width: 100%;
+  margin: 0.2px 0;
+  padding: 0;
+}
+figure.company h3 {
+  line-height: 1.1em;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+figure.company p {
+  font-size: 0.7em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+figure.company i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 20px 25px;
+  font-size: 34px;
+  opacity: 0;
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+}
+figure.company a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+figure.company:hover img,
+figure.company.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+figure.company:hover:after,
+figure.company.hover:after {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+
+}
+figure.company:hover h3,
+figure.company.hover h3,
+figure.company:hover p,
+figure.company.hover p,
+figure.company:hover i,
+figure.company.hover i {
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+body
+{
+ margin: 0px;
+ padding: 0px;
+}
+
+.main{
+    height:50%;
+    width:100%;
+    text-align: center;
+    background-image:url("http://webimage.10x10.co.kr/play2016/2017/20/20170728103736_0k366.jpg");
+    z-index: 2;
+}
+h4{
+    float:left;
+    margin-left: -4%;
+}
+.useri{
+     float:left;
+     margin-left: 1%;
+     margin-top: 0.5%
+}
+.mainlogo{
+    display: inline-block;
+    opacity: 0.8;
+    text-align: center;
+    margin-right: 5%;
+
+}
+.sr{
+    margin-left: 80%;
+    margin-top:-1%;
+
+}
+.mainlogo#img{
+    -webkit-border-radius:15px;
+}
+.company{
+    float:left;
+    position:relative;
+    z-index:1;
+
+}
+#upu{
+    height: 99%;
+}
+#ccc{
+    height: 99%;
+}

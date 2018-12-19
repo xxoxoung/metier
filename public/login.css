@@ -1,0 +1,76 @@
+
+.login{
+     margin-left:30%;
+        margin-right:20%;
+        margin-top:190px;
+        margin-bottom:60px;
+        width:50%;
+        height:40%;
+
+}
+
+   img{
+        margin-left:30%;
+        margin-right:20%;
+        margin-top:10%;
+        margin-bottom:60px;
+        width:40%;
+        height:40%;
+        opacity:0.9;
+        -webkit-border-radius:15px;
+
+    }
+
+     a{
+        font-size:21px;
+         text-align: center;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    div{
+        text-align:center;
+        color:#FFFFFF;
+        opacity: 0.7;
+        padding:15px;
+        margin-left:34.5%;
+        margin-right:20%;
+        margin-top:1px;
+        margin-bottom: 14px;
+        width:30%;
+        height:2%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        -webkit-border-radius:15px;
+    }
+
+.box1{ background-color:#ff3376; }
+
+body, html
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+ html:after{
+  background-image:url("http://webimage.10x10.co.kr/play2016/2017/20/20170728103736_0k366.jpg");
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    opacity:0.7!important;
+    filter:alpha(opacity=70);
+    z-index:-1;
+    content:"";
+    width:100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+}
+    

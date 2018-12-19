@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>Login Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <!--익스플로러 호환성-->
+          <link rel="stylesheet" type="text/css" href="login2.css">
+        <!--css연결-->
+
+    <script>
+  $('#login_submit').submit(function (event) {
+        var data = $(this).serialize();
+        $.post('/login2.html', data);
+        //location.href = 'main.html';
+        event.preventDefault();
+    });
+    function alertTest(){
+
+       alert("로그인성공");
+
+               }
+
+
+  </script>
+
+
+
+ <body>
+     <a href="index.html"> <img src="logo1.png"></a>
+    <div class="login">
+       <form id ="login_submit"action = "/login2.html" method="post"
+            autocomplete="off">
+
+                <b>아이디</b> <br><input type="text" id="ID" name = "username" size="30" style="height:30px;" autocomplete=off><br>
+                <b>비밀번호</b> <br><input type="password" id="password_1" name ="password" size="30" style="height:30px;" autocomplete=off><br>
+               <input type="submit" value="로그인" class=sb >
+
+        </form>
+     </div>
+    </body>
+</html>

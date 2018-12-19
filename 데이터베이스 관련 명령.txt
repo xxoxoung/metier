@@ -1,0 +1,147 @@
+drop database SBSJ;
+
+create database SBSJ default character set euckr COLLATE euckr_korean_ci;
+use SBSJ;
+
+create table UserInfo (
+	UserID varchar(20) not null primary key,
+	UserPW varchar(20) not null,
+	UserName varchar(10) not null,
+	PhoneNo varchar(20) not null
+);
+
+create table SpecInfo (
+	UserID varchar(20) not null primary key,
+	U_Grd decimal(3,2),
+	U_Eng int,
+	U_Jp tinyint(1),
+	U_Cn tinyint(1),
+	U_Com tinyint(1),
+	U_Hst tinyint(1),
+	U_Acc tinyint(1),
+	U_SalMin int,
+	U_SalMax int
+);
+
+create table Company (
+	CompanyNo int not null auto_increment primary key,
+	CompanyName varchar(30) not null,
+	CompanyKo varchar(30) not null,
+	C_Grd decimal(3,2),
+	C_Eng int,
+	C_Jp tinyint(1),
+	C_Cn tinyint(1),
+	C_Com tinyint(1),
+	C_Hst tinyint(1),
+	C_Acc tinyint(1),
+	C_Sal int,
+	C_Place varchar(20)
+);
+
+create table LikeList (
+	UserID varchar(20) not null,
+	CompanyNo int not null
+);
+
+create table Select_Co (
+	UserID varchar(20) not null,
+	CompanyNo int not null
+);
+
+alter table SpecInfo
+add constraint spec_fk foreign key(UserID) references UserInfo(UserID);
+
+alter table LikeList
+add constraint like_fk1 foreign key(UserID)references UserInfo(UserID);
+
+alter table LikeList
+add constraint like_fk2 foreign key(CompanyNo) references Company(CompanyNo);
+
+alter table LikeList
+add constraint like_pk primary key(UserID,CompanyNo);
+
+alter table Select_Co
+add constraint sc_fk1 foreign key(UserID) references UserInfo(UserID);
+
+alter table Select_Co
+add constraint sc_fk2 foreign key(CompanyNo) references Company(CompanyNo);
+
+alter table Select_Co
+add constraint sc_pk primary key(UserID,CompanyNo);
+
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('nps','국민연금공단',3,801,0,0,1,0,1,3400,'전라도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('jei','㈜ JEI 재능교육	',3,701,1,0,0,1,0,1800,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('kdb','㈜ KDB산업은행',3.8,901,0,0,1,0,1,3300,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('nh','㈜ NH 농협정보시스템',3,801,0,1,0,1,1,2600,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('pb','㈜ PB파트너즈',3.5,601,0,0,1,0,1,1800,'경기도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('nongsim','㈜ 농심',3,701,0,1,0,1,0,2300,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('nonghyup','㈜ 농협은행',3.9,901,0,0,1,0,1,3400,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('daiso','㈜ 다이소',3.7,801,0,0,1,0,0,1700,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('line','㈜ 라인플러스',4,801,1,0,0,0,1,2800,'경기도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('lottecon','㈜ 롯데건설',3.6,901,0,0,1,0,0,3200,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('blubell','㈜ 부루벨 코리아',3.4,701,1,1,0,0,0,2100,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('bullsone','㈜ 불스원',3.2,601,0,1,0,1,1,2500,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('burgerking','㈜ 비케이알 버거킹',3,901,1,0,0,1,0,1800,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('bighit','㈜ 빅히트엔터테인먼트',3.1,701,1,1,1,0,0,3700,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('sss','㈜ 삼성전자판매',3.8,801,0,1,0,0,1,2900,'경기도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('ourhome','㈜ 아워홈',3.5,701,0,1,0,1,0,2200,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('ahngook','㈜ 안국약품',3,701,0,0,1,0,0,2000,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('orion','㈜ 오리온',3,801,0,1,0,0,0,2100,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('baemin','㈜ 우아한 형제들',3.2,801,1,0,1,0,1,2500,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('with','㈜ 위드이노베이션',3,701,0,0,1,1,0,2200,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('wemap','㈜ 위메프',4,701,1,0,0,1,0,3100,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('emart','㈜ 이마트',3.7,901,1,0,1,0,0,2700,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('iloom','㈜ 일룸',3.5,701,0,1,0,1,0,2500,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('jb','㈜ 전북은행',4,901,0,0,0,1,1,2300,'전라도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('sinsago','㈜ 좋은책 신사고',3.7,701,1,0,0,1,0,2800,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('giordano','㈜ 지오다노',3.3,701,0,1,1,0,0,3000,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('coupang','㈜ 쿠팡',3,701,0,0,1,0,1,1800,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('kistemp','㈜ 키스탬프',3,601,0,1,0,0,0,1900,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('purmil','㈜ 푸르밀',3.1,601,1,0,0,1,0,3300,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('flyand','㈜ 플라이앤컴퍼니',3.9,601,1,0,1,0,0,3100,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('hana','㈜ 하나제약',3,601,0,0,0,1,0,2800,'경기도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('water','㈜ 한국수력원자력',3.5,801,0,0,1,0,1,2500,'경상도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('hanssem','㈜ 한샘',4,701,0,1,0,0,1,3100,'경기도');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('ion','㈜ 현대종합금속',3.7,901,0,1,0,0,0,3100,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('hotelshila','㈜ 호텔신라',3.1,901,1,1,0,0,1,2000,'서울');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('lh','한국도지공사 토지주택연구원',4,801,0,1,1,0,1,2300,'대전');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('keco','한국환경공단',3.2,801,0,0,1,1,0,3700,'인천');
+insert into Company (CompanyName, CompanyKo, C_Grd, C_Eng, C_Jp, C_Cn, C_Com, C_Hst, C_Acc, C_Sal, C_Place)
+values('lgch','(주) LG 화학',3.0,501,0,0,1,0,0,2600,'서울');

@@ -1,0 +1,55 @@
+html:after{
+  background-image:url("http://webimage.10x10.co.kr/play2016/2017/20/20170728103736_0k366.jpg");
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    opacity:0.7!important;
+    filter:alpha(opacity=70);
+    z-index:-1;
+    content:"";
+    width:100%;
+    margin: 0;
+    padding: 0;
+    height: 101%;
+
+}
+img{
+
+        margin-left:35%;
+        margin-right:20%;
+        -webkit-border-radius:15px;
+        height:30%;
+        opacity:0.7;
+}
+
+form{
+
+        margin-left:42%;
+        margin-right:20%;
+        margin-top:1%;
+        margin-bottom:3%;
+}
+
+input#submit
+{
+    width:150px;
+    height:45px;
+    border: 0;
+    margin-left: 10%;
+    margin-top: 2%;
+    -webkit-border-radius:15px;
+    background-color: #ff3376;
+    opacity: 0.7;
+}
+h5{
+    float: right;
+    margin-top: -1%;
+    color:#ff3376;
+}
+a:link{
+    text-decoration: none;!important
+}

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <!--익스플로러 호환성-->
+          <link rel="stylesheet" type="text/css" href="spec_info.css">
+        <!--css연결-->
+    </head>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+    // submit 이벤트 연결
+        $('#spec_submit').submit(function (event) {
+           var data = $(this).serialize();
+           $.post('/SpecInfo', data);
+           event.preventDefault();
+       });
+
+      function alertTest(){
+
+                       alert("수정이 완료되었습니다.");
+
+                 }
+    </script>
+    <body>
+   <a href="/auth/logout"><h4>Logout</h4></a>
+        <a href=start.html><img src="logo1.png"></a>
+            <!--action 연결해줘야 함-->
+            <form accept-charset="utf-8" id="spec_submit" autocomplete="off" method="post" action="/CustomizeInfo">
+                <b>학점 :</b> <input type="text" name="grd" size="25" style="height:30px;" autocomplete=off/>
+                <br><br>
+                <b>토익 :</b> <input type="text" name="eng" size="25" style="height:30px;" autocomplete=off/>
+                <br><br>
+                <b>제2외국어 :</b> <input type="checkbox" name="jp">일본어<input type="checkbox" name="cn">중국어<br><br>
+                <b>자격증 :</b> <input type="checkbox" name="com">컴활 <input type="checkbox" name="hst">한국사 <input type="checkbox" name="acc">회계<br><br>
+                <b>희망연봉 : <input type="text" name="salmin" size="10" style="height:30px;" autocomplete=off>~<input type="text" name="salmax" size="10" style="height:30px;" autocomplete=off></b>
+                <br><br>
+                <input type="submit" id="submit" onClick="alertTest()"  value="제출하기" style="font-size:20px">
+        </form>
+    </body>
+</html>

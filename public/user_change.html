@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <!--익스플로러 호환성-->
+        <link rel="stylesheet" type="text/css" href="sign_up.css">
+        <!--css연결-->
+        </head>
+        <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+        <script>
+        // submit 이벤트 연결
+        $('#info_submit').submit(function (event) {
+            var data = $(this).serialize();
+            $.post('/UserInfo', data);
+            event.preventDefault();
+        });
+
+        function alertTest(){
+
+           alert("수정이 완료되었습니다.");
+
+                   }
+
+
+    </script>
+    <body>
+        <div id="sign_up">
+            <a href=start.html><img src="logo1.png"></a>
+            <form accept-charset="utf-8" id="info_submit" method ="post" autocomplete=off action="/UserChange">
+                <b>비밀번호</b> <br>
+                <input type="password" name="password" size="30" style="height:40px;"><br>
+                <b>이름</b>    <br>
+                <input type="text" name="name" size="30" style="height:40px;"><br>
+                <b>전화번호</b>      <br>
+                <input type="text"  name="phone" size="30" style="height:40px;" title="숫자만 입력해주세요"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" class="sb" value="제출하기"  id="submit" onClick = "alertTest()" >&nbsp;
+                <!--submit은 로그인 이미지로 넣기-->
+            </form>
+        </div>
+    </body>
+</html>
